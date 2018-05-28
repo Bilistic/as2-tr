@@ -18,3 +18,4 @@ def test_twitter():
     sentence = "[Dirty-] sentence that (/needs/) {cleaning}"
     ans = DataAnalysis().clean(sentence)
     assert ans == "Dirty sentence that needs cleaning"
+    
