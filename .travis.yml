@@ -4,4 +4,4 @@ python:
 before_install:
   - pip install -r requirements.txt
 install: pip install -e .
-script: pytest
+script: pytest -v
