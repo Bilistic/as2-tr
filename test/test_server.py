@@ -8,6 +8,7 @@ def test_sentiment():
     obj = {'length': 80, 'method': 'reddit',
            'text': 'I m A Democrat And The Left s Russia Gaslighting Scares Me More Than Trump Does'}
     ans = DataAnalysis().analyze_sentiment(obj)
+    print(ans)
     assert int(ans.sentiment) == 0.25
 
 
