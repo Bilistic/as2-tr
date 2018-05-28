@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: web
+  name: web
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - image: gcr.io/assignment2-205312/web:v1
+        name: web
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+      restartPolicy: Always

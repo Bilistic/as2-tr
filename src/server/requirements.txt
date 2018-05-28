@@ -1,0 +1,4 @@
+pymongo
+pika
+uuid
+textblob

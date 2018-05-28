@@ -1,0 +1,19 @@
+#! /bin/bash
+
+kubectl delete services mongo
+
+kubectl delete services rabbitmq
+
+kubectl delete services web
+
+kubectl delete deployments mongo
+
+kubectl delete deployments rabbitmq
+
+kubectl delete deployments web
+
+kubectl delete deployments server
+
+kubectl delete deployments twitter
+
+kubectl delete deployments reddit

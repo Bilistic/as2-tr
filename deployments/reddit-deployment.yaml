@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: reddit
+  name: reddit
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: reddit
+    spec:
+      containers:
+      - image: gcr.io/assignment2-205312/reddit:v1
+        name: reddit
+        imagePullPolicy: Always
+      restartPolicy: Always

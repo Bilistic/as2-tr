@@ -1,0 +1,37 @@
+#! /bin/bash
+
+kubectl delete services mongo
+
+kubectl delete services rabbitmq
+
+kubectl delete services web
+
+kubectl delete deployments mongo
+
+kubectl delete deployments rabbitmq
+
+kubectl delete deployments web
+
+kubectl delete deployments server
+
+kubectl delete deployments twitter
+
+kubectl delete deployments reddit
+
+kubectl create -f Deployments/rabbitmq-deployment.yaml
+
+kubectl create -f Service/rabbitmq-service.yaml
+
+kubectl create -f Deployments/mongo-deployment.yaml
+
+kubectl create -f Service/mongo-service.yaml
+
+kubectl create -f Deployments/server-deployment.yaml
+
+kubectl create -f Deployments/web-deployment.yaml
+
+kubectl create -f Service/web-service.yaml
+
+kubectl create -f Deployments/reddit-deployment.yaml
+
+kubectl create -f Deployments/twitter-deployment.yaml

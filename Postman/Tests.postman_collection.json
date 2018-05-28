@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "003f6eaf-910a-44fd-b068-ef45e5d04b81",
+		"name": "Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://35.232.60.112:5000/index/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bd29dc0a-d0f3-4101-b071-fdb401d8e5a3",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://35.232.60.112:5000/index/",
+					"protocol": "http",
+					"host": [
+						"35",
+						"232",
+						"60",
+						"112"
+					],
+					"port": "5000",
+					"path": [
+						"index",
+						""
+					]
+				},
+				"description": "Gets the index page checks if its working"
+			},
+			"response": []
+		},
+		{
+			"name": "http://35.232.60.112:5000/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1e241c30-ef1b-4cb3-9456-3e6eafa8bc94",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body(\"append /index/ to your url (I could of just re routed you but...)\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://35.232.60.112:5000/",
+					"protocol": "http",
+					"host": [
+						"35",
+						"232",
+						"60",
+						"112"
+					],
+					"port": "5000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
